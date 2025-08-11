@@ -40,19 +40,19 @@
 <h1>Payload CSS Exfil</h1>
 
 <form method="POST">
-    <label>Lettre(s) :</label><br>
+    <label>Letters :</label><br>
     <input type="text" name="lettres" value="{{ lettres }}"><br>
     <label>Webhook :</label><br>
     <input type="text" name="webhook" value="{{ webhook }}"><br>
     <label>Champ :</label><br>
     <input type="text" name="Champ" value="{{ champ }}">
-    <button type="submit">Générer</button>
+    <button type="submit">generate</button>
 </form>
 
-<h2>Payload généré :</h2>
+<h2>Payload generate :</h2>
 <textarea readonly>{{ payload }}</textarea>
 <br>
-<button id="copyBtn" class="btn">Copier dans le presse-papier</button>
+<button id="copyBtn" class="btn">Copy</button>
 
 <script>
 document.getElementById("copyBtn").addEventListener("click", () => {
