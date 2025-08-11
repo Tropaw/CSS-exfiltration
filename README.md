@@ -1,2 +1,4 @@
 # CSS-exfiltration
-CSS Exfiltration Payload Generator
+Here is some documentation :
+
+https://portswigger.net/research/blind-css-exfiltration
