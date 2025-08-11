@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Générateur de payload CSS</title>
+<style>
+    body {
+        background-color: #121212;
+        color: #29272b42;
+        font-family: monospace;
+        padding: 20px;
+    }
+    textarea {
+        width: 100%;
+        height: 300px;
+        background: #1e1e1e;
+        color: rgb(173, 15, 36);
+        padding: 10px;
+        border: 1px solid #444;
+    }
+    input, button {
+        padding: 5px 10px;
+        margin: 5px 0;
+    }
+    .btn{
+
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:13px;
+      border:1px solid transparent;
+      cursor:pointer;
+    }
+</style>
+</head>
+<body>
+
+<h1>Payload CSS Exfil</h1>
+
+<form method="POST">
+    <label>Lettre(s) :</label><br>
+    <input type="text" name="lettres" value="{{ lettres }}"><br>
+    <label>Webhook :</label><br>
+    <input type="text" name="webhook" value="{{ webhook }}"><br>
+    <label>Champ :</label><br>
+    <input type="text" name="Champ" value="{{ champ }}">
+    <button type="submit">Générer</button>
+</form>
+
+<h2>Payload généré :</h2>
+<textarea readonly>{{ payload }}</textarea>
+<br>
+<button id="copyBtn" class="btn">Copier dans le presse-papier</button>
+
+<script>
+document.getElementById("copyBtn").addEventListener("click", () => {
+    const text = document.querySelector("textarea").value;
+    navigator.clipboard.writeText(text)
+        .then(() => console.log("copier !"))
+        .catch(err => console.error("Erreur copie :", err));
+});
+</script>
+
+</body>
+</html>
